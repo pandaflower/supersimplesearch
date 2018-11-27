@@ -54,7 +54,6 @@ function checkForSubmit(event){
 }
 
 
-
 //Main function that gets called everytime
 function showMySentence() {
 
