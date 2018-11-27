@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>My Super Simple Search</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="style.css" type="text/css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+				<div class="form-group">
+
+			          <div> <h3>Enquiry to the Studio Ghilbi API</h3></div>
+				  <div class="nobreak"><input class="searchBox" type="text" class="form-control" id="sentence" placeholder="Enter what movie you want to look for" name="sentence" onkeypress="checkForSubmit(event)" /></div>
+					<button id="btnSearch" onclick="showMySentence()">Search</button>
+				</div>
+		
+		<div id="main-display"></div>
+
+		<script src="sentences.js"></script>
+	</body>
+
+</html>
