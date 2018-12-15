@@ -1,18 +1,17 @@
 //Get the input from the HTML
 
 //Variable declarations
-let commonWordsArr = ['the','and','is','an','a']
-let moviesData = [];
-let tempSentenceArr = [];
-let moviesFinalList = [];
-let matchIsFound = false;
-let flgMovieInList = false;
+let moviesData: any[];
+let tempSentenceArr: string[];
+let moviesFinalList: any[];
+let matchIsFound : boolean = false;
+let flgMovieInList :boolean = false;
 
 //Gets the API Data saves this to an array. If we find a match, save this match to a new array and remove this item from the original array
 
 
 // Connect to the API
-let requestData = new XMLHttpRequest();
+let requestData : any = new XMLHttpRequest();
 
 //Opens the connection
 requestData.open('GET', 'https://ghibliapi.herokuapp.com/films', true);
@@ -20,9 +19,9 @@ requestData.send ();
 
 
 // Do something with the requested data
-requestData.onload = function () {
+requestData.onload = function () : void {
        
-let receivedData = JSON.parse(this.response)
+let receivedData : any = JSON.parse(this.response)
        
 //Go through each item of the array and puts it through a function
 receivedData.forEach( currentItem => {
@@ -35,7 +34,7 @@ receivedData.forEach( currentItem => {
 // --------------------- FUNCTIONS SECTION ---------------------
 
 //Function to check two strings against each other
-function checkMatch(currentWord, currentMovieTitle) {
+function checkMatch(currentWord : string, currentMovieTitle : string) : boolean {
 
 	//We can't pass variables directly into RegExp so creating this object
 	let tempRegEx = new RegExp(currentWord.toLowerCase());
@@ -61,7 +60,7 @@ function showMySentence() {
 	tempSentenceArr = [];
 
 	//Save the current sentence to a variable
-	let mySentence =  (document.getElementById('sentence') as HTMLInputElement).value;
+	let mySentence : string =  (document.getElementById('sentence') as HTMLInputElement).value;
 
         // turn the current search into an array
 	tempSentenceArr = mySentence.split(" ");
